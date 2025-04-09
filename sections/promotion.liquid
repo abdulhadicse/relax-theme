@@ -1,0 +1,46 @@
+<div>
+    <h1>{{ section.settings.promotion-title }}</h1>
+
+    {%- for block in section.blocks -%}
+        <p>{{ block.settings.heading }}</p>
+    {%- endfor -%}
+</div>
+
+{% schema  %}
+    {
+        "name": "Promotion",
+        "tag": "section",
+        "class": "my-promotion",
+        "settings": [
+            {
+                "type": "text",
+                "id": "promotion-title",
+                "label": "Title"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "heading",
+                "name": "Heading Blocks",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Title"
+                    }
+                ]
+            }
+        ],
+        "presets":[
+            {
+                "name": "Promotion",
+                "blocks": [
+                    {
+                        "type": "heading"
+                    }
+                ]
+            }
+            
+        ]
+    }
+{% endschema %}
